@@ -1,84 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <!-- Image de fond -->
+    <!-- Image de fond (gradient) -->
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/abdou_aymen"
+        android:src="@drawable/background_gradient"
         android:scaleType="centerCrop"
         android:contentDescription="@string/app_name" />
 
-    <!-- Superposition sombre pour lisibilité -->
+    <!-- Superposition sombre -->
     <View
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#B3000000" />
+        android:background="#99000000" />
 
-    <!-- Conteneur principal vertical -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="16dp">
+        android:gravity="center_horizontal"
+        android:padding="24dp">
 
-        <!-- Logo en haut -->
-        <ImageView
-            android:id="@+id/imgLogoTop"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:src="@drawable/warehouse_logo"
-            android:layout_gravity="center_horizontal"
-            android:layout_marginTop="24dp"
-            android:contentDescription="@string/app_name" />
-
-        <!-- Zone centrale (statut + bouton) -->
-        <LinearLayout
+        <View
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:layout_marginVertical="16dp">
+            android:layout_weight="0.15" />
 
-            <!-- Votre TextView d'origine (inchangé) -->
+        <ImageView
+            android:id="@+id/imgLogoTop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/warehouse_logo"
+            android:background="@drawable/bg_logo_circle"
+            android:padding="12dp"
+            android:contentDescription="@string/app_name" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WAREHOUSE_PFE"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.1"
+            android:layout_marginTop="16dp"
+            android:fontFamily="sans-serif-medium" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Scanner  : Document Code Barre / Qr Code /DataMatrix"
+            android:textSize="14sp"
+            android:textColor="#CCFFFFFF"
+            android:layout_marginTop="4dp" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.3" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="24dp"
+            app:cardCornerRadius="20dp"
+            app:cardElevation="8dp"
+            app:cardBackgroundColor="#33000000">
+
             <TextView
                 android:id="@+id/txtStatus"
-                android:text="Scanner prêt"
-                android:textSize="18sp"
+                android:text="📱 Scanner prêt"
+                android:textSize="16sp"
                 android:textStyle="bold"
                 android:textColor="#FFFFFF"
-                android:layout_marginBottom="24dp"
-                android:layout_width="wrap_content"
+                android:gravity="center"
+                android:padding="16dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content" />
+        </androidx.cardview.widget.CardView>
 
-            <!-- Bouton Scan plus petit et arrondi (ID inchangé) -->
-            <Button
-                android:id="@+id/btnScan"
-                android:text="Scanner"
-                android:layout_width="140dp"
-                android:layout_height="wrap_content"
-                android:paddingVertical="8dp"
-                android:textSize="14sp"
-                android:textColor="#FFFFFF"
-                android:background="@drawable/bg_button_small_rounded"
-                android:elevation="2dp" />
+        <Button
+            android:id="@+id/btnScan"
+            android:text="🔍 SCANNER_CODE"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="32dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_button_gradient"
+            android:elevation="4dp"
+            android:letterSpacing="0.05" />
 
-        </LinearLayout>
+        <Button
+            android:id="@+id/btnScanDocument"
+            android:text="📄 SCANNER DOCUMENT"
+            android:layout_width="200dp"
+            android:layout_height="56dp"
+            android:layout_marginTop="16dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:background="@drawable/bg_button_secondary"
+            android:elevation="4dp"
+            android:letterSpacing="0.05" />
 
-        <!-- Pied de page : créateurs -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.35" />
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="créé par Abdelkhalek Belwefi et Aymen Achour Chelly"
-            android:textSize="12sp"
-            android:textColor="#CCFFFFFF"
+            android:text="créé par Abdelkhalek Belwefi _ Aymen Achour Chelly"
+            android:textSize="11sp"
+            android:textColor="#99FFFFFF"
             android:gravity="center"
             android:layout_marginBottom="16dp"
             android:padding="8dp" />
 
     </LinearLayout>
-
 </FrameLayout>

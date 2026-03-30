@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void connectWebSocket() {
         try {
-            URI uri = new URI("ws://10.119.182.167:3001"); // remplacez par l'IP de votre serveur
+            URI uri = new URI("ws://192.168.43.13:3001"); // remplacez par l'IP de votre serveur
             webSocketClient = new WebSocketClient(uri) {
                 @Override
                 public void onOpen(ServerHandshake handshakedata) {
